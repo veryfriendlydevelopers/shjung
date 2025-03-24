@@ -17,8 +17,8 @@ df = pd.read_csv(r'./프로젝트/플레저_result3.csv', encoding='cp949')
 print(df.head())
 
 # 2. 텍스트 & 라벨 추출
-texts = df['내용'].astype(str)
-labels = df['판별 결과']
+texts = df['Reviews'].astype(str)
+labels = df['label']
 
 # 3. 한글 정제 함수
 def clean_text(text):
