@@ -37,7 +37,8 @@ for _, row in df.iterrows():
             most_similar_keyword = keyword
 
     # ✅ 결과 저장 (유사도가 0.7 이상이면 광고성으로 간주)
-    similarity_results.append([review_text, most_similar_keyword, max_similarity, "광고성" if max_similarity >= 0.7 else "정상"])
+    # 광고성 : 0, 정상 : 1
+    similarity_results.append([review_text, most_similar_keyword, max_similarity, 0 if max_similarity >= 0.7 else 1]) 
 
 # ✅ DataFrame으로 변환
 result_df = pd.DataFrame(similarity_results, columns=["리뷰 문장", "가장 유사한 광고 키워드", "유사도", "판별 결과"])
